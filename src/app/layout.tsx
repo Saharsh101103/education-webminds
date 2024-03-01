@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Catamaran,Aladin, Inter } from "next/font/google";
 import "./globals.css";
+import Footer from "../../components/ui/Footer";
+import Navbar from "../../components/ui/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const aladin = Aladin(
+  {subsets: ["latin"],
+    variable: "--font-aladin",
+    display: "swap",
+  weight: ["400"],}
+)
+const catamaran = Catamaran(
+  {subsets: ["latin"],
+    variable: "--font-cat",
+    display: "swap",
+  weight: ["100"],}
+)
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body >
+        <Navbar/>
+        {children}
+        <Footer/>
+        </body>
     </html>
   );
 }
