@@ -3,16 +3,17 @@ import Image from "next/image";
 import classNames from "classnames";
 import { MobileSignIn } from "./Mobile_Sign_In";
 import { User } from "lucide-react";
-import { auth } from "@/lib/auth";
 import {
 	Popover,
 	PopoverContent,
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { buttonVariants } from "@/components/ui/button";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export default async function Navbar() {
-	const session = await auth();
+	const session = await getServerSession(authOptions);
 	return (
 		<nav className="font-cat">
 			<section
