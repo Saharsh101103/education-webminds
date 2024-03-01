@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Catamaran, Aladin, Inter } from "next/font/google";
+import { Catamaran, Aladin } from "next/font/google";
 import "./globals.css";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const aladin = Aladin(
   {subsets: ["latin"],

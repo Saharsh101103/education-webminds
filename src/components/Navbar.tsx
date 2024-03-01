@@ -1,119 +1,105 @@
-"use client"
+import Link from "next/link";
+import Image from "next/image";
+import classNames from "classnames";
+import { MobileSignIn } from "./Mobile_Sign_In";
+import { User } from "lucide-react";
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from "@/components/ui/popover";
+import { buttonVariants } from "@/components/ui/button";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { ChevronLeft, Menu, User, X } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
-import classNames from 'classnames'
-
-function Navbar() {
-    const [isOpen, setisOpen] = useState(false);
-    const wrapperclasses = classNames(
-        "flex flex-col absolute top-0 w-[70%] max-h-screen h-screen text-white bg-gradient-to-b from-[#0F4551] to-[#0c0c0c] py-10 px-10 gap-24 transition-all duration-500 z-10", {
-            ["translate-x-0 opacity-100"]:isOpen, 
-            ["-translate-x-full opacity-0"]:!isOpen, 
-        }
-    )
-    const [isScrollingUp, setIsScrollingUp] = useState(true);
-	const prevScrollY = useRef(0);
-
-    useEffect(() => {
-		window.addEventListener("scroll", handleScroll);
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
-
-	const handleScroll = () => {
-		if (window.scrollY < (prevScrollY.current || 0)) {
-			setIsScrollingUp(true);
-		} else {
-			setIsScrollingUp(false);
-		}
-		prevScrollY.current = window.scrollY;
-	};
-    
-
-    return (
-        <nav className='font-catamaran'>
-            <section className={classNames('transition-all fixed text-white bg-gradient-to-b from-[#0F4551] to-[#0c0c0c]  min-w-full hidden md:flex justify-between items-center w-full p-10 h-20 -translate-y-full z-10 duration-300',
-				{
-					"translate-y-0": isScrollingUp,
-				},)}>
-
-                <div className='flex justify-evenly w-fit h-full gap-2 items-center'>
-
-                    <Link href={''}>
-                        <div className='h-12 w-12 rounded-full relative bg-cover flex justify-center items-center p-1  border-white border-2'>
-                            <Image src={'/logo.svg'} alt={''} width={42} height={42} className='hover:scale-110 transition-all duration-500' />
-                        </div>
-                    </Link>
-
-                    <Link href={''}>
-                        <div className='h-11 border-2 border-white w-24 flex justify-center items-center rounded-3xl '>
-                            <p className='hover:scale-110 transition-all duration-500'>Home</p>
-                        </div>
-                    </Link>
-                    <Link href={''}>
-                        <div className='h-11 border-2 border-white w-24 flex justify-center items-center rounded-3xl '>
-                            <p className='hover:scale-110 transition-all duration-500'>Contact</p>
-                        </div>
-                    </Link>
-                    <Link href={''}>
-                        <div className='h-11 border-2 border-white w-24 flex justify-center items-center rounded-3xl '>
-                            <p className='hover:scale-110 transition-all duration-500'>Discussion</p>
-                        </div>
-                    </Link>
-                    <Link href={''}>
-                        <div className='h-11 border-2 border-white w-24 flex justify-center items-center rounded-3xl '>
-                            <p className='hover:scale-110 transition-all duration-500'>Courses</p>
-                        </div>
-                    </Link>
-                </div>
-                <div className='flex justify-evenly w-fit h-full gap-2 items-center'>
-                    <Link href={''}>
-                        <div className='h-11 border-2 border-white w-24 flex justify-center items-center rounded-3xl '>
-                            <p className='hover:scale-110 transition-all duration-500'>
-                                Sign In
-                            </p>
-                        </div>
-                    </Link>
-                    <Link href={''}>
-                        <div className='h-16 border-2 border-white w-16 flex justify-center items-center rounded-full '>
-                            <User className='scale-150 hover:scale-[1.75] transition-all duration-500' />
-                        </div>
-                    </Link>
-
-                </div>
-            </section>
-            <section className="md:hidden">
-                <div className='p-4 bg-[#304c58]'>
-
-                    <Menu className='text-white'  onClick={()=>setisOpen(!isOpen)}/>
-                    <ChevronLeft className={classNames('absolute right-[32%] text-white top-[45%] z-50 scale-150 transition-all delay-700', {["hidden -translate-x-full"]:!isOpen,["block translate-x-0"]:isOpen})} onClick={()=>setisOpen(!isOpen)}/>
-                </div>
-                <div className={wrapperclasses}>
-                    <div className='w-full flex flex-col gap-10 justify-center items-center'>
-                       <Link href={''}>
-                        <Image src={'/logo.svg'} alt={''} width={100} height={100} className='' />
-                       </Link>
-                    <Link href={''} className='flex flex-row  gap-5'> 
-                    <User className='scale-150' />
-                    <p>Sign In</p>
-                    </Link>
-                    </div>
-                    <div className='flex flex-col gap-10'>
-                    <Link href={''} className='border-2 w-24 flex justify-center items-center h-10 rounded-3xl'> <p>Home</p> </Link>
-                    <Link href={''} className='border-2 w-24 flex justify-center items-center h-10 rounded-3xl'> <p>Contact</p> </Link>
-                    <Link href={''} className='border-2 w-24 flex justify-center items-center h-10 rounded-3xl'> <p>Discussion</p> </Link>
-                    <Link href={''} className='border-2 w-24 flex justify-center items-center h-10 rounded-3xl'> <p>Courses</p> </Link>
-                    </div>
-                </div>
-            </section>
-
-
-        </nav>
-    )
+export default async function Navbar() {
+	const session = await getServerSession(authOptions);
+	return (
+		<nav className="font-cat">
+			<section
+				className={classNames(
+					"fixed text-white bg-gradient-to-b from-[#0F4551] to-[#0c0c0c]  min-w-full hidden md:flex justify-between items-center w-full p-10 h-20 z-10 duration-300",
+				)}
+			>
+				<div className="flex gap-2 justify-evenly items-center h-full w-fit">
+					<Link href={""}>
+						<div className="flex relative justify-center items-center p-1 w-12 h-12 bg-cover rounded-full border-2 border-white">
+							<Image
+								src={"/logo.svg"}
+								alt={""}
+								width={42}
+								height={42}
+								className="transition-all duration-500 hover:scale-110"
+							/>
+						</div>
+					</Link>
+					<Link href={""}>
+						<div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white">
+							<p className="transition-all duration-500 hover:scale-110">
+								Home
+							</p>
+						</div>
+					</Link>
+					<Link href={""}>
+						<div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white">
+							<p className="transition-all duration-500 hover:scale-110">
+								Contact
+							</p>
+						</div>
+					</Link>
+					<Link href={""}>
+						<div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white">
+							<p className="transition-all duration-500 hover:scale-110">
+								Discussion
+							</p>
+						</div>
+					</Link>
+					<Link href={""}>
+						<div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white">
+							<p className="transition-all duration-500 hover:scale-110">
+								Courses
+							</p>
+						</div>
+					</Link>
+				</div>
+				<div className="flex gap-2 justify-evenly items-center h-full w-fit">
+					{session ? (
+						<div className="flex justify-center items-center p-2 rounded-3xl border-2 border-white cursor-default">
+							<p className="transition-all duration-500 hover:scale-110">
+								{session.user?.name}
+							</p>
+						</div>
+					) : (
+						<Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/signin`}>
+							<div className="flex justify-center items-center p-2 rounded-3xl border-2 border-white">
+								<p className="transition-all duration-500 hover:scale-110">
+									Sign In
+								</p>
+							</div>
+						</Link>
+					)}
+					<div className="flex overflow-hidden relative justify-center items-center w-16 h-16 rounded-full border-2 border-white cursor-pointer">
+						<Popover>
+							<PopoverTrigger disabled={!session}>
+								{session ? (
+									<Image src={session.user?.image as string} alt="" fill />
+								) : (
+									<User className="transition-all duration-500 scale-150 hover:scale-[1.75]" />
+								)}
+							</PopoverTrigger>
+							<PopoverContent sideOffset={3} className="p-0 mt-3 w-fit">
+								<Link
+									className={buttonVariants()}
+									href={`${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/signout`}
+								>
+									Sign out
+								</Link>
+							</PopoverContent>
+						</Popover>
+					</div>
+				</div>
+			</section>
+			<MobileSignIn session={session} />
+		</nav>
+	);
 }
-
-export default Navbar
