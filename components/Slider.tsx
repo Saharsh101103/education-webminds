@@ -5,8 +5,9 @@ type SliderProps = React.ComponentProps<typeof Slider>
 
 export function SliderDemo({ className, value , ...props }: SliderProps) {
   return (
-    <div className="flex flex-col text-sm border-2 p-2 justify-center text-black w-[40%]">
-        <div><p>Weeks:
+    <div className="flex flex-col text-sm border-2 p-2 justify-center  w-[40%] 
+    text-[#0F3941]">
+        <div><p className="text-[#0F3941]">Weeks:
             {value}
             </p>
             </div>

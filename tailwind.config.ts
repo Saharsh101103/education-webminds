@@ -1,4 +1,5 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
+import { aladin, catamaran } from "@/app/layout";
 
 const config = {
   darkMode: ["class"],
@@ -18,6 +19,10 @@ const config = {
       },
     },
     extend: {
+        fontFamily: {
+        aladin: ['var(--font-aladin)'],
+        catamaran: ['var(--font-cat)'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
