@@ -35,7 +35,7 @@ function Navbar() {
     
 
     return (
-        <nav className='--font-cat'>
+        <nav className='font-catamaran'>
             <section className={classNames('transition-all fixed text-white bg-gradient-to-b from-[#0F4551] to-[#0c0c0c]  min-w-full hidden md:flex justify-between items-center w-full p-10 h-20 -translate-y-full z-10 duration-300',
 				{
 					"translate-y-0": isScrollingUp,

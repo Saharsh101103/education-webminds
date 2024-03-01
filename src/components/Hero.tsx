@@ -4,12 +4,12 @@ import React from 'react'
 
 function Hero() {
   return (
-    <div className='hero min-h-screen max-h-fit   min-w-screen max-w-screen text-white font-aladin'>
+    <div className='bg-[url(/herobg.svg)] bg-[cover] min-h-screen max-h-fit  text-white font-aladin'>
             <div className=  'flex flex-col gap-32 md:gap-52 h-full w-full justify-center md:px-44 py-20 md:py-60 pr-8 md:pr-0 z-10'>
                 <div className='flex flex-col px-[10%] w-full gap-8 md:gap-16'>
-                    <div className='flex justify-start'><p className='text-4xl'>Online</p></div>
-                    <div className='flex justify-center'><p className='text-7xl md:text-9xl font-bold font-catamaran'>Education</p></div>
-                    <div className='flex  justify-end'><p>&apos:Welcome to our dynamic e-learning platform, your gateway to knowledge.&apos:</p></div>
+                    <div className='flex justify-start'><p className='text-4xl md:text-[5.25rem] font-bold'>Online</p></div>
+                    <div className='flex justify-center'><p className='text-7xl md:text-[14em] font-bold font-catamaran'>Education</p></div>
+                    <div className='flex  justify-end'><p className='text md:text-[26.25px] md:font-[700]'>&apos;Welcome to our dynamic e-learning platform, your gateway to knowledge.&apos;</p></div>
                 </div>
                 <div className='px-2 flex flex-col'>
 
@@ -19,7 +19,7 @@ function Hero() {
                 </div>
                 </div>
                 <div className='px-10'>
-                    <p className='text-2xl md:text-4xl'>Learn  .  Implement . Repeat</p>
+                    <p className='text-2xl md:text-[3.25rem] md:font-[700]'>Learn  .  Implement . Repeat</p>
                 </div>
                 </div>
             </div>
