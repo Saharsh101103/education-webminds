@@ -14,7 +14,7 @@ import { ArrowRightIcon, HeartIcon } from "lucide-react";
 
 function Selectcourses() {
 	const [isCliked, setisClicked] = useState(1);
-	const cardData = [
+	const cardData1 = [
 		{
 			index: 1,
 			name: "DSA to Development",
@@ -122,7 +122,7 @@ function Selectcourses() {
 			<div className="flex justify-center items-center p-6">
 				<Carousel className="w-full max-w-[80%]">
 					<CarouselContent className="-ml-1">
-						{cardData.map((_, index) => (
+						{cardData1.map((_, index) => (
 							<CarouselItem key={index} className="pl-1 md:basis-1/2">
 								<div className="p-1">
 									<Card>
