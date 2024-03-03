@@ -1,21 +1,40 @@
 import type { Metadata } from "next";
-import { Catamaran, Aladin } from "next/font/google";
+import { Catamaran, Aladin, Amaranth, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const aladin = Aladin(
-  {subsets: ["latin"],
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
+const aladin = Aladin(
+  {
+    subsets: ["latin"],
     variable: "--font-aladin",
     display: "swap",
-  weight: ["400"],}
+    weight: ["400"],
+  }
 )
 
-export const catamaran = Catamaran(
-  {subsets: ["latin"],
+const amaranth = Amaranth(
+  {
+    subsets: ["latin"],
+    variable: "--font-amaranth",
+    display: "swap",
+    weight: ["400"],
+  }
+)
+
+const catamaran = Catamaran(
+  {
+    subsets: ["latin"],
     variable: "--font-cat",
     display: "swap",
-  weight: ["100"],}
+    weight: ["100"],
+  }
 )
 
 export const metadata: Metadata = {
@@ -30,12 +49,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body >
-        <Navbar/>
+    <html lang="en" className={`${catamaran.variable} ${inter.variable} ${amaranth.className} ${aladin.variable}`}>
+      <body>
+        <Navbar />
         {children}
-        <Footer/>
-        </body>
+        <Footer />
+      </body>
     </html>
   );
 }

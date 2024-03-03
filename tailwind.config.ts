@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { aladin, catamaran } from "@/app/layout";
 
 const config = {
   darkMode: ["class"],
@@ -8,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -19,7 +18,8 @@ const config = {
       },
     },
     extend: {
-        fontFamily: {
+      fontFamily: {
+        inter: ['var(--font-inter)'],
         aladin: ['var(--font-aladin)'],
         catamaran: ['var(--font-cat)'],
       },
