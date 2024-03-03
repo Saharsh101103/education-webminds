@@ -9,7 +9,7 @@ import { useState } from "react";
 export function MobileSignIn({ session, userInfo }: { session: Session | null, userInfo: { name: string, regNum: string } | null }) {
   const [isOpen, setisOpen] = useState(false);
   const wrapperclasses = classNames(
-    "flex flex-col absolute top-0 w-[70%] max-h-screen h-screen text-white bg-gradient-to-b from-[#0F4551] to-[#0c0c0c] py-10 px-10 gap-24 transition-all duration-500 z-10",
+    "flex flex-col fixed top-0 w-[70%]  h-screen text-white bg-gradient-to-b from-[#0F4551] to-[#0c0c0c] py-10 px-10 gap-24 transition-all duration-500 z-10",
     {
       ["translate-x-0 opacity-100"]: isOpen,
       ["-translate-x-full opacity-0"]: !isOpen,
@@ -21,7 +21,7 @@ export function MobileSignIn({ session, userInfo }: { session: Session | null, u
         <Menu className="text-white" onClick={() => setisOpen(!isOpen)} />
         <ChevronLeft
           className={classNames(
-            "absolute right-[32%] text-white top-[45%] z-50 scale-150 transition-all delay-700",
+            "fixed right-[32%] text-white top-[45%] z-50 scale-150 transition-all delay-700",
             {
               ["hidden -translate-x-full"]: !isOpen,
               ["block translate-x-0"]: isOpen,

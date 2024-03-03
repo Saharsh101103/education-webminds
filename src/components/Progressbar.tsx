@@ -21,7 +21,7 @@ const formattedDate = `${mm}/${dd}/${yyyy}`;
   }, [])
 
   return (
-    <div className="justify-center flex flex-col md:px-32 px-12 w-full">
+    <div className="justify-center flex flex-col md:px-32 px-12 w-full font-aladin" >
         <div className="md:text-3xl text-2xl text-black text-start w-[60%]"> <p className="">Start where you left</p></div>
         <div className="text-lg text-black  text-start w-[60%]"> <p className="w-full">DSA to Developer</p></div>
         <div className="flex justify-center items-center gap-10">

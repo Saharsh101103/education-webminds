@@ -13,7 +13,7 @@ import {
 export function SelectDemo() {
   return (
     <Select>
-      <SelectTrigger className="w-[180px] border-2 rounded-l-none h-10 text-[#0F3941]">
+      <SelectTrigger className="w-[180px] border-2 rounded-none  h-10 text-[#0F3941]">
         <SelectValue placeholder="Select pace" />
       </SelectTrigger>
       <SelectContent>

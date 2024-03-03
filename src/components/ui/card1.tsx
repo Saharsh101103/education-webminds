@@ -3,14 +3,14 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 
-const Card = React.forwardRef<
+const Card1 = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      "rounded-xl bg-[url(/cardbg.svg)]   border bg-card text-card-foreground shadow w-[45vh] h-[30vh] bg-cover scale-50 md:scale-100",
+      "rounded-xl bg-[url(/cardbg1.svg)]   border bg-card text-card-foreground shadow w-[45vh] h-[30vh] bg-cover scale-50 md:scale-100",
       className
     )}
     {...props}
@@ -18,7 +18,7 @@ const Card = React.forwardRef<
     {/* <Image src={"/cardbg.svg"} className="" alt={""} fill/> */}
     </div>
 ))
-Card.displayName = "Card"
+Card1.displayName = "Card"
 
 const CardHeader = React.forwardRef<
   HTMLDivElement,
@@ -76,4 +76,4 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = "CardFooter"
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+export { Card1, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
