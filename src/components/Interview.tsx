@@ -3,6 +3,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { HeartIcon, ArrowRightIcon } from 'lucide-react'
 import { Card, CardContent } from './ui/card'
 import { Card1 } from './ui/card1';
+import Link from 'next/link';
 
 function Interview() {
     const cardData1 = [
@@ -12,6 +13,7 @@ function Interview() {
 			fullname: "Data Structure and Algorithm to Development",
 			type: "Ready for Interview",
 			price: "₹1200.00",
+			Link: "/course/card1"
 		},
 		{
 			index: 2,
@@ -19,6 +21,7 @@ function Interview() {
 			fullname: "Data Analysist Interview Full Course",
 			type: "Ready for Interview",
 			price: "₹1200.00",
+			Link: "/course/card2"
 		},
 		{
 			index: 3,
@@ -27,6 +30,7 @@ function Interview() {
 				"'Welcome to our dynamic e-learning platform, your gateway to knowledge'.",
 			type: "Ready for Interview",
 			price: "₹1200.00",
+			Link: "/course/card3"
 		},
 		{
 			index: 4,
@@ -34,6 +38,7 @@ function Interview() {
 			fullname: "Data Structure and Algorithm to Development",
 			type: "Ready for Interview",
 			price: "₹1200.00",
+			Link: "/course/card4"
 		},
 	];
   return (
@@ -62,7 +67,7 @@ function Interview() {
 													</div>
 												</div>
 												<div className="h-fit w-full   rounded-3xl backdrop-blur-[8px] font-catamaran text-black">
-													<div className="flex my-[1vw]">
+													<Link className="flex my-[1vw]" href={_.Link}>
 														<div className="flex flex-col pl-2">
 															<div className="text-sm font-semibold">
 																{_.fullname}
@@ -77,7 +82,7 @@ function Interview() {
 														<div className="absolute right-2 bottom-5 bg-black rounded-full scale-125 hover:scale-[1.3] transition-all duration-500 cursor-pointer">
 															<ArrowRightIcon className="bg-black text-white rounded-full scale-75 hover:scale-105 transition-all duration-500" />
 														</div>
-													</div>
+													</Link>
 												</div>
 											</div>
 										</CardContent>

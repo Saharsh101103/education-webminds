@@ -50,7 +50,7 @@ export default async function Navbar() {
               </p>
             </div>
           </Link>
-          <Link href={""}>
+          <Link href={"/discussion"}>
             <div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white hover:text-black hover:bg-white">
               <p className="transition-all duration-500 hover:scale-110">
                 Discussion
