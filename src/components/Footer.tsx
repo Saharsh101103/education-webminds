@@ -3,42 +3,40 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='relative     max-w-full min-w-full h-32 text-black bg-white  
-    flex flex-col justify-center p-2 border-t-2'>
-        <div className='border-b-2  w-full flex justify-center items-center h-16'>
-
-      <div className='h-14 rounded-full flex justify-center items-center w-fit md:w-[70%] border-2 border-black scale-75 md:scale-100'>
-        <Link href={''} className='flex justify-center items-center h-full w-24 border-2 rounded-full border-black'>
+    <footer className='flex relative flex-col justify-center p-2 text-black bg-white border-t-2'>
+      <div className='flex justify-center items-center w-full h-16 border-b-2'>
+        <div className='h-14 rounded-full flex justify-center items-center w-fit md:w-[70%] border-2 border-black scale-75 md:scale-100'>
+          <Link href={''} className='flex justify-center items-center w-24 h-full rounded-full border-2 border-black'>
             <p className='font-bold'>
-                Instagram
+              Instagram
             </p>
-        </Link>
-        <Link href={''} className='flex justify-center items-center h-full w-24 border-2 rounded-full border-black'>
+          </Link>
+          <Link href={''} className='flex justify-center items-center w-24 h-full rounded-full border-2 border-black'>
             <p className='font-bold'>
-                Twitter
+              Twitter
             </p>
-        </Link>
-        <Link href={''} className='flex justify-center items-center h-full w-24 border-2 rounded-full border-black'>
+          </Link>
+          <Link href={''} className='flex justify-center items-center w-24 h-full rounded-full border-2 border-black'>
             <p className='font-bold'>
-                LinkedIn
+              LinkedIn
             </p>
-        </Link>
-        <Link href={''} className='flex justify-center items-center h-full w-24 border-2 rounded-full border-black'>
+          </Link>
+          <Link href={''} className='flex justify-center items-center w-24 h-full rounded-full border-2 border-black'>
             <p className='font-bold'>
-                Whatsapp
+              Whatsapp
             </p>
-        </Link>
-        <Link href={''} className='flex justify-center items-center h-full w-24 border-2 rounded-full border-black'>
+          </Link>
+          <Link href={''} className='flex justify-center items-center w-24 h-full rounded-full border-2 border-black'>
             <p className='font-bold'>
-                Pintrest
+              Pintrest
             </p>
-        </Link>
+          </Link>
+        </div>
       </div>
-        </div>
-        <div className='w-full h-16 flex justify-center items-center scale-75 md:scale-100'>
-            <p className='font-bold'>©2024, All Right Reserved.</p>
-        </div>
-    </div>
+      <div className='flex justify-center items-center w-full h-16 scale-75 md:scale-100'>
+        <p className='font-bold'>©2024, All Right Reserved.</p>
+      </div>
+    </footer>
   )
 }
 
