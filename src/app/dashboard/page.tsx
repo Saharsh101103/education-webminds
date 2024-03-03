@@ -38,7 +38,7 @@ export default async function Page() {
         </div>
         <ul className="flex font-catamaran font-semibold justify-evenly w-full">
           {months.map(month => (
-            <li>{month}</li>
+            <li key={month}>{month}</li>
           ))}
         </ul>
       </div>
