@@ -37,29 +37,29 @@ export default async function Navbar() {
             </div>
           </Link>
           <Link href="/">
-            <div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white hover:text-black hover:bg-white">
-              <p className="transition-all duration-500 hover:scale-110">
+            <div className="flex group justify-center items-center w-24 h-11 rounded-3xl transition-colors border-2 border-white hover:text-black hover:bg-white">
+              <p className="transition-all duration-500 group-hover:scale-110 font-extrabold">
                 Home
               </p>
             </div>
           </Link>
           <Link href={""}>
-            <div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white hover:text-black hover:bg-white">
-              <p className="transition-all duration-500 hover:scale-110">
+            <div className="flex group justify-center items-center w-24 h-11 rounded-3xl transition-colors border-2 border-white hover:text-black hover:bg-white">
+              <p className="transition-all duration-500 hover:scale-110 font-extrabold">
                 Contact
               </p>
             </div>
           </Link>
-          <Link href={""}>
-            <div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white hover:text-black hover:bg-white">
-              <p className="transition-all duration-500 hover:scale-110">
+          <Link href="/discussion">
+            <div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 transition-colors border-white hover:text-black hover:bg-white">
+              <p className="transition-all duration-500 hover:scale-110 font-extrabold">
                 Discussion
               </p>
             </div>
           </Link>
           <Link href={""}>
-            <div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white hover:text-black hover:bg-white">
-              <p className="transition-all duration-500 hover:scale-110">
+            <div className="flex justify-center items-center w-24 h-11 rounded-3xl border-2 border-white transition-colors hover:text-black hover:bg-white">
+              <p className="transition-all duration-500 hover:scale-110 font-extrabold">
                 Courses
               </p>
             </div>
@@ -68,22 +68,22 @@ export default async function Navbar() {
         <div className="flex gap-2 justify-evenly items-center h-full w-fit">
           {session ? (
             <Link href="/dashboard">
-              <div className="flex justify-center items-center p-2 rounded-3xl border-2 border-white  hover:text-black hover:bg-white">
-                <p className="transition-all duration-500 hover:scale-110 ">
+              <div className="flex group justify-center items-center p-2 rounded-3xl border-2 border-white  transition-colors hover:text-black hover:bg-white">
+                <p className="transition-all duration-500 group-hover:scale-110 font-extrabold">
                   {userInfo?.name}
                 </p>
               </div>
             </Link>
           ) : (
             <Link href="/api/auth/signin">
-              <div className="flex justify-center items-center p-2 rounded-3xl border-2 border-white hover:text-black hover:bg-white">
-                <p className="transition-all duration-500 hover:scale-110">
+              <div className="flex justify-center items-center group p-2 rounded-3xl border-2 border-white transition-colors hover:text-black hover:bg-white">
+                <p className="transition-all duration-500 group-hover:scale-110 font-extrabold">
                   Sign In
                 </p>
               </div>
             </Link>
           )}
-          <div className="flex overflow-hidden relative justify-center items-center w-16 h-16 rounded-full border-2 border-white cursor-pointer  hover:text-black hover:bg-white">
+          <div className="flex overflow-hidden relative justify-center items-center w-16 h-16 rounded-full border-2 transition-colors border-white cursor-pointer  hover:text-black hover:bg-white">
             <Popover>
               <PopoverTrigger disabled={!session}>
                 {session ? (
