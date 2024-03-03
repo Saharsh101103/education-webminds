@@ -1,47 +1,16 @@
-import { getServerSession } from "next-auth"
-import { authOptions } from "../api/auth/[...nextauth]/route"
-import { parseNameAndRegNum } from "@/lib/utils"
-import { redirect } from "next/navigation"
-import Image from "next/image"
-import StarRating from "@/components/StarRating"
+import Badge from '@/components/Badge'
+import Profile from '@/components/Profile'
+import SolvedQues from '@/components/SolvedQues'
+import React from 'react'
 
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-
-export default async function Page() {
-  const session = await getServerSession(authOptions)
-
-  if (!session) redirect("/api/auth/signin")
-
-  const userInfo = parseNameAndRegNum(session?.user?.name)
-
-  return <main className="pt-20">
-    {/* Profile Box */}
-    <div className="flex my-4 ml-auto mr-10 rounded-lg justify-between w-[55rem] items-center p-5 bg-primary text-primary-foreground">
-      <div className="space-y-5">
-        <p className="font-inter">WELCOME</p>
-        <div className="space-y-1">
-          <p className="text-xl font-bold">{userInfo?.name}</p>
-          <p>Delhi, NCR Campus</p>
-        </div>
-      </div>
-      <div className="flex flex-col gap-3 justify-center items-center">
-        <Image src={session.user?.image as string} alt="img" height={50} width={50} className="rounded-full" />
-        <StarRating />
-      </div>
+function page() {
+  return (
+    <div>
+      <Profile/>
+      <Badge/>
+      <SolvedQues/>
     </div>
-
-    {/* Progess Box */}
-    <div className="container">
-      <div className="w-[80rem]">
-        <div className="w-[80rem] h-[15rem] relative">
-          <Image src="/progress.png" alt="img" fill />
-        </div>
-        <ul className="flex font-catamaran font-semibold justify-evenly w-full">
-          {months.map(month => (
-            <li key={month}>{month}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  </main>
+  )
 }
+
+export default page

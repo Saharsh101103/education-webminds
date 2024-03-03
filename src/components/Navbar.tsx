@@ -68,8 +68,8 @@ export default async function Navbar() {
         <div className="flex gap-2 justify-evenly items-center h-full w-fit">
           {session ? (
             <Link href="/dashboard">
-              <div className="flex justify-center items-center p-2 rounded-3xl border-2 border-white hover:text-black bg-white">
-                <p className="transition-all duration-500 hover:scale-110">
+              <div className="flex justify-center items-center p-2 rounded-3xl border-2 border-white  hover:text-black hover:bg-white">
+                <p className="transition-all duration-500 hover:scale-110 ">
                   {userInfo?.name}
                 </p>
               </div>

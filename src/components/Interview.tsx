@@ -43,7 +43,7 @@ function Interview() {
             Prepare for Interview.
         </p>
         <p className='text-white text-4xl font-aladin flex justify-center items-center  '>
-        &quot;Unlock success: Elevate your interview skills with our comprehensive preparation.&quot;
+        &quot;Unlock success: Elevate your interview skills with our comprehensive preparation.&quot;		
         </p>
       </div>
       <div className="flex h-full w-full justify-center items-center p-6 scale-110 \">
