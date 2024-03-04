@@ -59,7 +59,7 @@ function Interview() {
 								<div className="p-[1vw]">
 									<Card1>
 										<CardContent className="flex justify-center items-center p-6 h-full">
-											<div className="flex flex-col justify-between h-full text-white">
+											<div className="flex flex-col justify-between h-full text-white w-full">
 												<div className="flex justify-end w-full text-2xl">
 													{cardItem.name}
 													<div className="flex justify-center items-center w-10 h-10 rounded-full shrink-0">

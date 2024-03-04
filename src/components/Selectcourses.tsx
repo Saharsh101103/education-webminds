@@ -132,7 +132,7 @@ function Selectcourses() {
 								<div className="p-[1vw]">
 									<Card>
 										<CardContent className="flex justify-center items-center p-6 h-full">
-											<div className="flex flex-col h-full justify-between text-white">
+											<div className="flex flex-col h-full justify-between w-full text-white">
 												<div className="flex justify-between w-full text-2xl">
 													{cardItem.name}
 													<div className="flex justify-center items-center w-10 h-10 rounded-full shrink-0">
