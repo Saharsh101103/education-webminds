@@ -5,7 +5,7 @@ import Interview from "@/components/Interview";
 
 export default function Home() {
   return (
-    <main className="min-h-[80vh] bg-[#304c58] ">
+    <main className="min-h-[80vh]  bg-[#304c58] ">
      <Hero/>
      <Courses/>
      <Interview/>
