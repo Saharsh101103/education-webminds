@@ -52,7 +52,7 @@ function Selectcourses() {
 	];
 
 	return (
-		<div className="flex flex-col justify-center p-4  min-h-[50vh] min-w-screen font-aladin">
+		<div className="flex flex-col justify-center p-4  min-h-[50vh] min-w-screen font-aladin" id="card">
 			<div className="scale-[0.6] -translate-x-24 md:scale-100 md:translate-x-0 flex flex-row w-[100%] justify-between">
 				<div className="flex px-[10vw] h-fit w-fit">
 					<button
@@ -127,29 +127,29 @@ function Selectcourses() {
 			<div className="flex justify-center items-center p-6">
 				<Carousel className="w-full max-w-[80%]">
 					<CarouselContent className="-ml-1">
-						{cardData1.map((_, index) => (
+						{cardData1.map((cardItem, index) => (
 							<CarouselItem key={index} className="pl-1 md:basis-1/2">
 								<div className="p-[1vw]">
 									<Card>
-										<CardContent className="flex justify-center items-center p-6 aspect-square">
-											<div className="flex flex-col justify-between pb-32 w-full h-full text-white">
+										<CardContent className="flex justify-center items-center p-6 h-full">
+											<div className="flex flex-col h-full justify-between text-white">
 												<div className="flex justify-between w-full text-2xl">
-													{_.name}
+													{cardItem.name}
 													<div className="flex justify-center items-center w-10 h-10 rounded-full shrink-0">
 														<HeartIcon />
 													</div>
 												</div>
-												<Link className="h-fit w-full   rounded-3xl backdrop-blur-[8px] font-catamaran" href={_.Link}>
+												<Link className="h-fit w-full   rounded-3xl backdrop-blur-[8px] font-catamaran" href={cardItem.Link}>
 													<div className="flex my-[1vw]">
 														<div className="flex flex-col pl-2">
 															<div className="text-sm font-semibold">
-																{_.fullname}
+																{cardItem.fullname}
 															</div>
 															<div className="text-xs font-normal">
-																{_.type}
+																{cardItem.type}
 															</div>
 															<div className="text-sm font-medium">
-																{_.price}
+																{cardItem.price}
 															</div>
 														</div>
 														<div className="absolute right-2 bottom-5 bg-black rounded-full scale-125 hover:scale-[1.3] transition-all duration-500 cursor-pointer">
