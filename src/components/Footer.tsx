@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function Footer() {
   return (
-    <footer className='h-[100vh] bg-[url(/herobg.svg)] bg-cover flex justify-center items-center font-aladin tracking-wider'>
+    <footer className='h-[100vh] bg-[url(/herobg.svg)] bg-cover flex justify-center items-center font-aladin tracking-wider py-10 my-1'>
       <div className='max-w-[100%] flex flex-col justify-around items-center h-full'>
         <Link href="/">
           <div className="flex relative justify-center items-center p-1 w-24 h-24 bg-cover rounded-full border-2 border-white backdrop-blur-md">

@@ -3,12 +3,12 @@ import React from 'react'
 
 function Badge() {
   return (
-    <div className='flex flex-col justify-around h-[40vh] items-center p-5'>
+    <div className='flex flex-col justify-around h-[40vh] items-center p-5 my-16'>
         <p className='text-5xl'>
             Badges
         </p>
     <div className='flex w-[80%] justify-around items-center'>
-    <div className='flex flex-col justify-around items-center gap-10'>
+    <div className='flex flex-col justify-around items-center gap-10 py-10'>
             <div className='bg-[#0F3941] w-40 h-40 rounded-full flex justify-center items-center'>
                 <Image src={'/streak.svg'} alt={''} width={80} height={80}/>
             </div>

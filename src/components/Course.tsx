@@ -10,11 +10,11 @@ import {
 
 function Discussion() {
     return (
-        <div className='h-[100vh] bg-white text-black font-aladin flex flex-col justify-around items-center my-20'>
+        <div className='h-[100vh] bg-white text-black font-aladin flex flex-col justify-around items-center my-52 gap-5'>
             <p className='md:text-8xl text-6xl'>
                 Courses
             </p>
-            <div className='flex w-[80%] md:w-[60%] min-h-40 h-fit border-black rounded-2xl justify-between px-8 text-xl md:text-5xl items-center border-2 '>
+            <div className='flex w-[80%] md:w-[60%] min-h-52 h-fit border-black rounded-2xl justify-between px-8 text-xl md:text-5xl items-center border-2 gap-10'>
                 <Accordion type="single" collapsible className='w-[95%]'>
                     <AccordionItem value="item-1">
                         <AccordionTrigger className='text-4xl'>Week 1</AccordionTrigger>
@@ -39,7 +39,7 @@ function Discussion() {
 
                 <CheckCircle className='md:scale-[2.5]  hover:text-blue-900 rounded-full' />
             </div>
-            <div className='flex w-[80%] md:w-[60%] min-h-40 h-fit border-black rounded-2xl justify-between px-8 text-xl md:text-5xl items-center border-2 '>
+            <div className='flex w-[80%] md:w-[60%] min-h-52 border-black rounded-2xl justify-between px-8 text-xl md:text-5xl items-center border-2 gap-10'>
             <Accordion type="single" collapsible className='w-[95%]'>
                     <AccordionItem value="item-1">
                         <AccordionTrigger className='text-4xl'>Week 2</AccordionTrigger>
@@ -63,7 +63,7 @@ function Discussion() {
                 </Accordion>
                 <CheckCircle className='md:scale-[2.5]  hover:text-blue-900 rounded-full' />
             </div>
-            <div className='flex w-[80%] md:w-[60%] min-h-40 h-fit border-black rounded-2xl justify-between px-8 text-xl md:text-5xl items-center border-2 '>
+            <div className='flex w-[80%] md:w-[60%] min-h-52 h-fit border-black rounded-2xl justify-between px-8 text-xl md:text-5xl items-center border-2 gap-10'>
             <Accordion type="single" collapsible className='w-[95%]'>
                     <AccordionItem value="item-1">
                         <AccordionTrigger className='text-4xl'>Week 3</AccordionTrigger>
@@ -87,7 +87,7 @@ function Discussion() {
                 </Accordion>
                 <CheckCircle className='md:scale-[2.5]  hover:text-blue-900 rounded-full' />
             </div>
-            <div className='flex w-[80%] md:w-[60%] min-h-40 h-fit border-black rounded-2xl justify-between px-8 text-xl md:text-5xl items-center border-2 '>
+            <div className='flex w-[80%] md:w-[60%] min-h-52 h-fit border-black rounded-2xl justify-between px-8 text-xl md:text-5xl items-center border-2 gap-10'>
             <Accordion type="single" collapsible className='w-[95%]'>
                     <AccordionItem value="item-1">
                         <AccordionTrigger className='text-4xl'>Week 4</AccordionTrigger>

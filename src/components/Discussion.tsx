@@ -3,7 +3,7 @@ import React from 'react'
 
 function Discussion() {
   return (
-    <div className='h-[100vh] bg-white text-black font-aladin flex flex-col justify-around items-center'>
+    <div className='h-[100vh] bg-white text-black font-aladin flex flex-col justify-around items-center gap-5 my-10'>
       <p className='md:text-8xl text-6xl'>
         Discussion
       </p>

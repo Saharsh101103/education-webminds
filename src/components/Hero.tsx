@@ -6,7 +6,7 @@ function Hero() {
   return (
     <div className='bg-[url(/herobg.svg)] bg-[cover] h-[100vh]  text-white font-aladin'>
             <div className=  'flex flex-col gap-32 md:gap-0 h-full w-full justify-center md:px-44 py-20 md:py-60 pr-8 md:pr-0 z-10'>
-                <div className='flex flex-col px-[10%] w-full gap-8 md:gap-16'>
+                <div className='flex flex-col px-[10%] w-full gap-8 md:gap-16 translate-y-10'>
                     <div className='flex justify-start'><p className='text-4xl md:text-[5.25rem] font-bold'>Online</p></div>
                     <div className='flex justify-center'><p className='text-7xl md:text-[14em] font-bold font-aladin'>Education</p></div>
                     <div className='flex  justify-end'><p className='text md:text-[26.25px] md:font-[700]'>&apos;Welcome to our dynamic e-learning platform, your gateway to knowledge.&apos;</p></div>

@@ -3,7 +3,7 @@ import React from 'react'
 
 function SolvedQues() {
   return (
-    <div className='h-[100vh] bg-white text-black font-aladin flex flex-col justify-around items-center my-20'>
+    <div className='h-[100vh] bg-white text-black font-aladin flex flex-col justify-around items-center my-20 gap-5'>
       <p className='md:text-8xl text-6xl'>
         Solved Question
       </p>
