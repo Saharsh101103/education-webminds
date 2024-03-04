@@ -11,6 +11,7 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ArrowRightIcon, HeartIcon } from "lucide-react";
+import Link from "next/link";
 
 function Selectcourses() {
 	const [isCliked, setisClicked] = useState("Self Paced");
@@ -21,6 +22,7 @@ function Selectcourses() {
 			fullname: "Data Structure and Algorithm to Development",
 			type: isCliked,
 			price: "₹1200.00",
+			Link: "/course/DSA-to-Development"
 		},
 		{
 			index: 2,
@@ -28,6 +30,7 @@ function Selectcourses() {
 			fullname: "Data Analysist Interview Full Course",
 			type: isCliked,
 			price: "₹1200.00",
+			Link: "/course/Course-to-Data-Analyst"
 		},
 		{
 			index: 3,
@@ -36,6 +39,7 @@ function Selectcourses() {
 				"'Welcome to our dynamic e-learning platform, your gateway to knowledge'.",
 			type: isCliked,
 			price: "₹1200.00",
+			Link: "/course/Data-Structure-&-Algorithm"
 		},
 		{
 			index: 4,
@@ -43,6 +47,7 @@ function Selectcourses() {
 			fullname: "Data Structure and Algorithm to Development",
 			type: isCliked,
 			price: "₹1200.00",
+			Link: "/course/Data-Structure-and-Algorithm-to-Development"
 		},
 	];
 
@@ -134,7 +139,7 @@ function Selectcourses() {
 														<HeartIcon />
 													</div>
 												</div>
-												<div className="h-fit w-full   rounded-3xl backdrop-blur-[8px] font-catamaran">
+												<Link className="h-fit w-full   rounded-3xl backdrop-blur-[8px] font-catamaran" href={_.Link}>
 													<div className="flex my-[1vw]">
 														<div className="flex flex-col pl-2">
 															<div className="text-sm font-semibold">
@@ -151,7 +156,7 @@ function Selectcourses() {
 															<ArrowRightIcon className="bg-black rounded-full scale-75 hover:scale-105 transition-all duration-500" />
 														</div>
 													</div>
-												</div>
+												</Link>
 											</div>
 										</CardContent>
 									</Card>

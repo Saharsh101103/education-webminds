@@ -74,7 +74,7 @@ export function MobileSignIn({ session, userInfo }: { session: Session | null, u
             <p>Contact</p>{" "}
           </Link>
           <Link
-            href={""}
+            href={"/discussion"}
             className="flex justify-center items-center w-24 h-10 rounded-3xl border-2"
           >
             {" "}
